@@ -1,0 +1,10 @@
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+div>img{
+    display: block;
+    height: 60vh;
+    width: fit-content;
+}
