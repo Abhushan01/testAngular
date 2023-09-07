@@ -1,10 +1,10 @@
-div{
-    display: flex;
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+section{
+    background: #ff1b68;
 }
 
-div>img{
-    display: block;
-    height: 60vh;
-    width: fit-content;
+h1{
+    color: white;
+    font-family: 'Anton','sans-serif';
 }
