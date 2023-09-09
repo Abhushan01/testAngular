@@ -11,7 +11,7 @@ export class PostComponent {
   constructor(private mdService: MarkdownService, private http: HttpClient) { }
 
   async ngOnInit() {
-    const markdownRaw = String(await this.http.get('/assets/html.md', 
+    const markdownRaw = String(await this.http.get('assets/html.md', 
       { responseType: 'text' }).toPromise());   
     this.markdown = this.mdService.parse(markdownRaw);
   }
