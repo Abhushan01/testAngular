@@ -1,5 +1,6 @@
 # HTML Notes- Aditya
 ## *Modified on 09/09/2023*
+![html5](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/260px-HTML5_logo_and_wordmark.svg.png)  
 ### Introduction:
 - HTML stands for *Hyper Text Markup Language*.
 - HTML is not a programming language but a **markup language** meant for creating web pages.
