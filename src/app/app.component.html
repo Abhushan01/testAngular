@@ -4,8 +4,14 @@
   </section>
   <section id="plans">
     <h1 class="section-title">
-      HTML NOTES
+      Collections
     </h1>
+    <div class="content" >
+      <div class="card" *ngFor="let element of postInfo">
+        <div class="card-header">{{element.title}}</div>
+        <div class="card-body"><button [routerLink]="['posts/',element.id]">Click Here</button></div>
+      </div>
+    </div>
     <router-outlet></router-outlet>
   </section>
 </main>
