@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MarkdownService } from 'ngx-markdown';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -8,11 +9,21 @@ import { MarkdownService } from 'ngx-markdown';
 })
 export class PostComponent {
   markdown: string='' ;
-  constructor(private mdService: MarkdownService, private http: HttpClient) { }
+  constructor(private mdService: MarkdownService, private http: HttpClient,private _Activatedroute:ActivatedRoute) { 
+}
+  post_id:any;
 
-  async ngOnInit() {
-    const markdownRaw = String(await this.http.get('/assets/html.md', 
-      { responseType: 'text' }).toPromise());   
-    this.markdown = this.mdService.parse(markdownRaw);
+ ngOnInit() {
+  this._Activatedroute.paramMap.subscribe(paramMap => { 
+    this.post_id = paramMap.get('id'); 
+    let markdownRaw=''
+    this.http.get(`assets/post-${this.post_id}.md`, 
+      { responseType: 'text' }).subscribe((val)=>{
+        markdownRaw=val
+        this.markdown = this.mdService.parse(markdownRaw);
+      });   
+});
   }
+
+
 }
